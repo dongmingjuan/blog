@@ -34,6 +34,15 @@ class User
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
 
+  # 用户名
+  field :user_name, type: String
+  # 角色
+  field :role, type: String
+
+  def admin?
+   role == 'admin'
+  end
+
   # 关联关系
   has_many :posts
 end

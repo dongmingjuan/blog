@@ -7,15 +7,20 @@
           <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
             <span>导航</span>
           </li>
-          <li class="<%= "active" if controller_name == "home" %>">
-            <a href="/admin/home" class="auto">
-              <i class="glyphicon glyphicon-stats icon text-primary"></i>
-              <span class="font-bold">控制面板</span>
-            </a>
-          </li>
-          <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-            <span>平台管理</span>
-          </li>
+          <% if can? :read, User %>
+            <li class="<%= "active" if controller_name == "home" %>">
+              <a href="/admin/home" class="auto">
+                <i class="glyphicon glyphicon-stats icon text-primary"></i>
+                <span class="font-bold">控制面板</span>
+              </a>
+            </li>
+          <% end %>
+
+          <% if can? :read, User %>
+            <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+              <span>平台管理</span>
+            </li>
+          <% end %>
 
             <li class="<%= "active" if controller_name == "posts" %>">
               <a href="/" class="auto">
@@ -24,12 +29,15 @@
               </a>
             </li>
 
+          <% if can? :read, User %>
             <li class="<%= "active" if controller_name == "admin::posts" %>">
               <a href="/admin/posts" class="auto">
                 <i class="fa fa-file-text"></i>
                 <span>后台博客</span>
               </a>
             </li>
+          <% end %>
+
           <li class="line dk hidden-folded"></li>
         </ul>
       </nav>
