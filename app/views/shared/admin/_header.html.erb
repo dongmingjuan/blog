@@ -8,11 +8,13 @@
       <i class="glyphicon glyphicon-align-justify"></i>
     </button>
     <!-- brand -->
-    <div class="block m-l-sm m-t-sm">
-      <a href="/" >
-        <h2>后台管理</h2>
-      </a>
-    </div>
+    <% if can? :read, User %>
+      <div class="block m-l-sm m-t-sm">
+        <a href="/" >
+          <h2>后台管理</h2>
+        </a>
+      </div>
+    <% end %>
     <!-- / brand -->
   </div>
   <!-- / navbar header -->

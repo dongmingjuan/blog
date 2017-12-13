@@ -4,9 +4,11 @@
       <!-- nav -->
       <nav ui-nav class="navi clearfix">
         <ul class="nav">
-          <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-            <span>导航</span>
-          </li>
+          <% if can? :read, User %>
+            <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+              <span>导航</span>
+            </li>
+          <% end %>
           <% if can? :read, User %>
             <li class="<%= "active" if controller_name == "home" %>">
               <a href="/admin/home" class="auto">
