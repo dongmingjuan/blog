@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to(post.title, admin_post_path(post)) %></td>
+  <td><%= post.user.try(:email) %></td>
+  <td><%= link_to("查看博客文章内容", post_path(post))%></td>
+</tr>

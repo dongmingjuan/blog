@@ -1,6 +1,7 @@
 <tr>
   <td><%= link_to(post.title, admin_post_path(post)) %></td>
-  <td><%= post.user.email %></td>
+  <td><%= post.user.try(:email) %></td>
+  <td><%= link_to("查看博客文章内容", admin_post_path(post))%></td>
   <td>
     <%= link_to("编辑", edit_admin_post_path(post), class: "btn btn-xs btn-primary")%>|
     <%= link_to("删除", admin_post_path(post), method: :delete, class: "btn btn-xs btn-primary")%>
