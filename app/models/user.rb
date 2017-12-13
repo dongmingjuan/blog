@@ -45,4 +45,5 @@ class User
 
   # 关联关系
   has_many :posts
+  has_many :comments
 end

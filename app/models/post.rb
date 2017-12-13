@@ -12,4 +12,5 @@ class Post
 
   # 关联关系
   belongs_to :user
+  has_many :comments
 end
