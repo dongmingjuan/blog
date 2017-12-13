@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    博客文章管理
+    <div class="pull-right">
+      <%= link_to "新建博客文章", new_admin_post_path, class: "btn btn-primary btn-xs" %>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped b-t b-light">
+    <thead>
+      <tr>
+        <th>博客标题</th>
+        <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render(@posts) %>
+      </tbody>
+    </table>
+  </div>
+
+<footer class="panel-footer">
+  <%= render partial: "shared/admin/paginate", locals: { object: @posts } %>
+</footer>
+
+</div>
