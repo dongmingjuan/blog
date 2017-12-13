@@ -111,10 +111,11 @@
             <i class="on md b-white bottom"></i>
           </span>
           <% if !current_user %>
-          <li><%= link_to("登录", new_user_session_path) %></li>
+             <li><%= link_to("登录", new_user_session_path) %></li>|
+             <li><%= link_to("注册", new_user_registration_path) %></li>
           <% else %>
-          <hi><%= current_user.email %></hi>
-          <li><%= link_to("登出", destroy_user_session_path, method: :delete)%></li>
+            <hi><%= current_user.email %></hi>
+            <li><%= link_to("登出", destroy_user_session_path, method: :delete)%></li>
           <% end %>
     </ul>
     <!-- / navbar right -->

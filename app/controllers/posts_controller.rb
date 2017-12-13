@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:show]
   load_and_authorize_resource
   before_action :set_post, only: [:show]
   layout "admin"
