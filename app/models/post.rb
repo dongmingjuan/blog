@@ -9,4 +9,7 @@ class Post
   # 文章内容
   field :content,               type: String
   validates :content, presence: true
+
+  # 关联关系
+  belongs_to :user
 end
